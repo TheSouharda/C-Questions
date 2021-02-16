@@ -1,20 +1,19 @@
 #include <iostream>
 using namespace std;
 
-void BubbleSort(int arr[], int num)
+void InsertionSort(int arr[], int num)
 {
     int temp = 0;
-    for (int i = 0; i < num - 1; i++)
+    for (int i = 1; i < num; i++)
     {
-        for (int j = 0; j < num - 1 - i; j++)
+        temp = arr[i];
+        int j = i - 1;
+        while (arr[j] > temp && j >= 0)
         {
-            if (arr[j] > arr[j + 1])
-            {
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
+            arr[j + 1] = arr[j];
+            j--;
         }
+        arr[j + 1] = temp;
     }
 
     cout << "Your Sorted array" << endl;
@@ -49,7 +48,7 @@ int main()
 
     cout << endl;
 
-    BubbleSort(arr, num);
+    InsertionSort(arr, num);
 
     return 0;
 }
