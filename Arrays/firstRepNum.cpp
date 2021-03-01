@@ -21,7 +21,7 @@ int main()
 
     int minidx = INT_MAX;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < num; i++)
     {
         if (idx[arr[i]] != -1)
         {
