@@ -1,1 +1,1 @@
-MAX = max(sum, MAX);
+ return 0;

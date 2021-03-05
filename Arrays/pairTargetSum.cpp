@@ -4,15 +4,17 @@ int main()
 {
     system("cls");
     int num = 0, key = 0;
-    cout << "Enter a sorted array " << endl;
 
+    cout << "Enter the num" << endl;
     cin >> num;
+
     cout << "Enter the key" << endl;
     cin >> key;
     int arr[num];
 
     int beg = 0, end = 0;
 
+    cout << "Enter a sorted array " << endl;
     for (int i = 0; i < num; i++)
     {
 
@@ -21,17 +23,20 @@ int main()
 
     beg = 0;
     end = num - 1;
-    while (beg != end)
+    while (beg < end)
     {
+        cout << "hello";
         if (arr[beg] + arr[end] == key)
         {
             cout << beg << " " << end;
+            break;
         }
 
         else if (arr[beg] + arr[end] > key)
         {
             end--;
         }
+
         else if (arr[beg] + arr[end] < key)
         {
             beg++;
@@ -40,6 +45,6 @@ int main()
         {
             cout << "Not present in the array " << endl;
         }
-
-        return 0;
     }
+    return 0;
+}
