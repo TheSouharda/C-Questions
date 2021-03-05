@@ -2,9 +2,13 @@
 using namespace std;
 int main()
 {
-    int num = 0;
+    system("cls");
+    int num = 0, key = 0;
     cout << "Enter a sorted array " << endl;
+
     cin >> num;
+    cout << "Enter the key" << endl;
+    cin >> key;
     int arr[num];
 
     int beg = 0, end = 0;
@@ -16,14 +20,26 @@ int main()
     }
 
     beg = 0;
-    end = n - 1;
+    end = num - 1;
     while (beg != end)
     {
-        if (arr[beg] + arr[end])
+        if (arr[beg] + arr[end] == key)
         {
-            /* code */
+            cout << beg << " " << end;
         }
-    }
 
-    return 0;
-}
+        else if (arr[beg] + arr[end] > key)
+        {
+            end--;
+        }
+        else if (arr[beg] + arr[end] < key)
+        {
+            beg++;
+        }
+        else
+        {
+            cout << "Not present in the array " << endl;
+        }
+
+        return 0;
+    }
